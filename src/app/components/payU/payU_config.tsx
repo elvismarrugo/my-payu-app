@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { FormData } from "app/interface/form_data";
 import { products } from "app/data/product";
 import { InitialFormData } from "app/data/form_data";
-import { calculateMD5 } from "app/lib/signature";
+import { calculateMD5 } from "app/utils/signature";
 import { AUTH } from "app/data/auth";
 import ProductSelector from "./product_selector";
 import BuyerInfoForm from "./buyer_info_form";
@@ -44,7 +44,7 @@ const PayUConfig = () => {
       }));
       console.log(signature);
     }
-  }, [formData.amount, formData.currency]);
+  }, [formData.amount, formData.currency, formData.referenceCode]);
 
   const handleSubmit = () => {
     const form = document.createElement("form");
