@@ -8,7 +8,7 @@ import { calculateMD5 } from "app/utils/signature";
 import { AUTH } from "app/data/auth";
 import ProductSelector from "./product_selector";
 import BuyerInfoForm from "./buyer_info_form";
-import SubmitButton from "./submit_btn";
+import PayUButton from "./PayUButton";
 
 const PayUConfig = () => {
   const [formData, setFormData] = useState<FormData>(InitialFormData);
@@ -70,7 +70,7 @@ const PayUConfig = () => {
     <div className="text-purple-500 grid gap-y-2 max-w-sm justify-center">
       <ProductSelector products={products} onChange={handleProductChange} />
       <BuyerInfoForm formData={formData} onChange={handleInputChange} />
-      <SubmitButton onClick={handleSubmit} />
+      <PayUButton onClick={handleSubmit} />
     </div>
   );
 };
